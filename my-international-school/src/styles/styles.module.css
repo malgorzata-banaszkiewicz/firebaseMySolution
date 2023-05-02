@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+	margin: 0px;
+	padding: 0px;
+	font: inherit;
+	box-sizing: border-box;
+}
+
+img,
+audio,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.menuChosen {
+	background-color: red;
+}
+
+.menuIdle {
+	background-color: blueviolet;
+}
+
+.footer {
+	width: 100vw;
+	background-color: #e53170;
+	gap: 50px;
+	padding: 30px;
+	margin: 10px;
+}
+
+.menu {
+	list-style-type: "📎";
+	text-align: left;
+	display: flex;
+	background-color: #e53170;
+	width: 100vw;
+	gap: 50px;
+	padding: 30px;
+}
+
+.sticky {
+	position: sticky;
+	top: 10px;
+}
+
+.space {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.signOut {
+	color: black;
+	text-decoration: "underline";
+	cursor: pointer;
+}
+
+.breathe {
+	margin: 20px;
+}

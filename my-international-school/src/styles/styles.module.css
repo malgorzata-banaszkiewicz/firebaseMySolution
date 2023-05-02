@@ -64,3 +64,26 @@ body {
 .breathe {
 	margin: 20px;
 }
+
+.delete {
+	background-color: #e53170;
+	color: black;
+}
+
+.borderOrange {
+	border-color: #ff8906;
+	color: #ff8906;
+}
+
+.borderGrey {
+	border-color: #a7a9be;
+	color: #a7a9be;
+}
+
+.borderPink {
+	border-color: #e53170;
+}
+
+.important {
+	text-decoration: underline;
+}

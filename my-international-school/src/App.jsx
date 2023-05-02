@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { FooterMenu } from './components/FooterMenu/FooterMenu';
 import { MainPage } from './components/MainPage/MainPage';
-// import { Student } from './components/Student/Student';
+import { Student } from './components/Student/Student';
 import { Students } from './components/Students/Students';
 import { Comments } from './components/Comments/Comments';
 import { Grades } from './components/Grades/Grades';
@@ -23,12 +23,10 @@ function App() {
     onAuthStateChanged(auth, user => {
       if (user) {
         setIsAuth(true);
-        console.log(isAuth);
         setUser(user);
       } else {
         setIsAuth(false);
-        console.log(isAuth);
-        setUser(null)
+        setUser(null);
       }
     })
   }, []);
@@ -49,7 +47,7 @@ function App() {
             </Route>
             <Route path='/auth' element={isAuth ? <Navigate to='/students'></Navigate> : <Auth></Auth>}></Route>
               <Route path='students' element={<Students></Students>}>
-                {/* <Route path='auth/students/student' element={<Student></Student>}></Route> */}
+                <Route path='student' element={<Student></Student>}></Route>
               </Route>
               <Route path='comments' element={<Comments></Comments>}>
               </Route>

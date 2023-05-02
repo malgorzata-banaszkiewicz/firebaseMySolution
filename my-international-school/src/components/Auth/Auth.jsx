@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
 import { getFormDataRegister, getFormDataLogin } from "./getFormData";
 import { firebaseErrors } from "./firebaseErrors";
@@ -7,8 +7,8 @@ import styles from '../../styles/styles.module.css'
 export const Auth = () => {
     const handleRegister = e => {
         e.preventDefault();
-        const { email, nick, password } = getFormDataRegister(e);
-        createUserWithEmailAndPassword(auth, email, nick, password)
+        const { email, password } = getFormDataRegister(e);
+        createUserWithEmailAndPassword(auth, email, password)
         .then(jwt => {
             e.target.reset();
             console.log(jwt);

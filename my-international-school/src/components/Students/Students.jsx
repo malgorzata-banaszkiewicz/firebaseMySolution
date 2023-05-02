@@ -35,6 +35,7 @@ const handleChange = async (e, id) => {
   const studentRef = doc(schoolCollection, id);
   try {
     await updateDoc(studentRef, getFormData(e));
+  
   } catch (e) {
     console.log(e)
   }

@@ -5,7 +5,7 @@ import { auth } from '../../firebase/firebase.config';
 
 
 
-export const Menu = ({className, isAuth, email}) => {
+export const Menu = ({className, isAuth, nick}) => {
     return(
         <nav className={styles.sticky}>
             <ul className={styles.menu}>
@@ -21,7 +21,7 @@ export const Menu = ({className, isAuth, email}) => {
                     
                 )}
              {isAuth && (
-                <>
+                <> 
                  <li>
                     <NavLink to='students'>Students</NavLink>
                 </li>
@@ -31,10 +31,8 @@ export const Menu = ({className, isAuth, email}) => {
                 <li>
                     <NavLink to='grades'>Grades</NavLink>
                 </li>
-                <li onClick={() => signOut(auth)} className={styles.signOut}>
-                    <NavLink to='/auth'></NavLink>
-                Sign Out
-                
+                <li onClick={() => signOut(auth)}>
+                <NavLink to='/' className={styles.signOut}>Sign Out</NavLink> 
                 </li>
                 </>
              )}

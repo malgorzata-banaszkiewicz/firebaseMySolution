@@ -23,9 +23,11 @@ function App() {
     onAuthStateChanged(auth, user => {
       if (user) {
         setIsAuth(true);
+        console.log(isAuth);
         setUser(user);
       } else {
         setIsAuth(false);
+        console.log(isAuth);
         setUser(null)
       }
     })
@@ -41,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <Header>
-        <Menu isAuth={isAuth} email={user?.email} nick={user?.nick}/>
+        <Menu isAuth={isAuth}/>
           <Routes>
             <Route path='/' element={<MainPage></MainPage>} onClick={()=> {setIsSelected(true)}}>  
             </Route>
@@ -53,13 +55,13 @@ function App() {
               </Route>
               <Route path='grades' element={<Grades></Grades>}>
               </Route>
-            <Route path='students' element={!isAuth ? <Navigate to="/auth"></Navigate>: <Students></Students>}></Route>
+            <Route path='students' element={!isAuth ? <Navigate to="/"></Navigate>: <Students></Students>}></Route>
           </Routes>
      </Header>
       <main>
       </main>
       <Footer>
-        <FooterMenu ></FooterMenu>
+        <FooterMenu></FooterMenu>
       </Footer>
     </div>
   )

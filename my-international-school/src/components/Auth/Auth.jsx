@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
 import { getFormDataRegister, getFormDataLogin } from "./getFormData";
 import { firebaseErrors } from "./firebaseErrors";

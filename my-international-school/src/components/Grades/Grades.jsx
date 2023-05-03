@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import db from "../../firebase/firebase.config";
 import { collection, onSnapshot } from "firebase/firestore";
 import { getStudents } from "../../firebase/getStudents";
-import { nanoid } from 'nanoid';
+import styles from '../../styles/styles.module.css'
+
 
 export const Grades = ({className}) => {
-    const id = nanoid();
     const [isEvaluated, setIsEvaluated] = useState([]);
     const gradesCollection = collection(db, 'grades');
     useEffect(() => {
@@ -16,15 +16,35 @@ export const Grades = ({className}) => {
             }
             )
     }, []);
+
     return(
-        <ul className={className}>
-            {isEvaluated.map(({studentID, lessonName, grade1, grade2, grade3}) => (
-            <li key={id}>studentID: {studentID}
-            <p>Lesson: {lessonName}</p>
-            <p>Grades: {grade1}, {grade2}, {grade3}</p>
-            </li>
+        <div className={className}>
+            {isEvaluated.map(({id, studentID, lessonName, grade1, grade2, grade3}) => (
+            <div key={id}>
+                <table className={styles.table}>
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td>Lesson:</td>
+                            <td>{lessonName}</td>
+                        </tr>
+                        <tr>
+                            <td>studentID:</td>
+                            <td>{studentID}</td>
+                        </tr>
+                        <tr>
+                            <td>Grades:</td>
+                            <td>{grade1}, {grade2}, {grade3}</td>
+                        </tr>
+        
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+                
+         
+            </div>
             ))}
            
-        </ul>
+        </div>
     )
 }
